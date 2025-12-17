@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+:root {
+  /* Palette: Slate & Indigo Theme */
+  --primary: #6366f1; /* Indigo 500 */
+  --primary-hover: #4f46e5; /* Indigo 600 */
+  --bg-color: #f8fafc; /* Slate 50 (พื้นหลังเทาอ่อนมาก) */
+  --surface: #ffffff; /* สีขาว */
+  --text-main: #334155; /* Slate 700 */
+  --text-muted: #64748b; /* Slate 500 */
+  --border: #e2e8f0; /* Slate 200 */
+
+  --success-bg: #dcfce7; /* เขียวพาสเทล */
+  --success-text: #15803d; /* เขียวเข้ม */
+  --danger-bg: #fee2e2; /* แดงพาสเทล */
+  --danger-text: #b91c1c; /* แดงเข้ม */
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --radius: 12px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  margin: 0;
+  -webkit-font-smoothing: antialiased; /* ตัวหนังสือคมชัดบน Mac */
+}
+
+h1,
+h2,
+h3 {
+  color: #1e293b;
+  font-weight: 600;
+  margin-top: 0;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- Layout --- */
+.container {
+  max-width: 1000px; /* กว้างขึ้นหน่อย */
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.navbar {
+  background: var(--surface);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.navbar h3 {
+  margin: 0;
+  color: var(--primary);
+  letter-spacing: -0.5px;
+}
+
+/* --- Card & Auth --- */
+.auth-box {
+  background: var(--surface);
+  padding: 2.5rem;
+  border-radius: 16px; /* โค้งมนกว่าเดิม */
+  box-shadow: var(--shadow-md);
+  max-width: 380px;
+  margin: 8vh auto;
+  text-align: center;
+  border: 1px solid white; /* เทคนิคซ่อนขอบหยาบ */
+}
+
+.table-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+  overflow: hidden; /* ตัดขอบมุมโต๊ะ */
+  border: 1px solid var(--border);
+}
+
+/* --- Form Elements --- */
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 16px;
+  margin: 10px 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #f9fafb;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  box-sizing: border-box;
+  color: var(--text-main);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15); /* เงาฟุ้งๆ สีม่วง */
+}
+
+/* --- Buttons --- */
+.btn {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.95rem;
+}
+
+.btn:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px); /* ลอยขึ้นนิดนึงตอนชี้ */
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-danger {
+  background-color: white;
+  color: var(--danger-text);
+  border: 1px solid #fecaca;
+}
+.btn-danger:hover {
+  background-color: #fef2f2;
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
+/* --- Table --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #f1f5f9;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  padding: 16px;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+td {
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+tr:hover td {
+  background-color: #f8fafc;
+} /* Highlight แถวตอนเอาเมาส์ชี้ */
+
+/* --- Badges & Icons --- */
+.badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.success {
+  background-color: var(--success-bg);
+  color: var(--success-text);
+}
+.failed {
+  background-color: var(--danger-bg);
+  color: var(--danger-text);
+}
+
+/* Utility */
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
